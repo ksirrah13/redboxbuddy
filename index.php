@@ -14,13 +14,11 @@
 
 <span><input type="text" class="form-control" placeholder="Search"></span>
 
- <div class="btn btn-default centered" id="genreBtn">Apply filter by genre</div>
+<!--  <div class="btn btn-default centered" id="genreBtn">Apply filter by genre</div>
 
  <div id="slider1_container" >
 
         
-        <!-- Slides Container -->
-             
             
             <a class="ajax" href="#" data-url="genre.php" data-genre="all">No filter</a>
             <a class="ajax" href="#" data-url="genre.php" data-genre="Action">Action</a>
@@ -35,7 +33,9 @@
      
 
         
-    </div>
+    </div> -->
+
+    <?php include('slider.php') ?>
 
 <p id="filter"></p>
 	<ul class="nav nav-tabs" role="tablist">
@@ -52,26 +52,8 @@
 	</div> <!-- end row -->
 
 
+<?php include('footerTabs.php') ?>
 
-<div data-role="navbar">
-                <div class="footerfixed">
-                                        <ul>
-                                                <li><a href="index.php" data-icon="home">Home</a></li>
-                                                <li><a href="top20tab.php" data-icon="star">Top 20</a></li>
-                                                <li><a href="listviews.html" data-icon="grid">Lists</a></li>
-                                                <li><a href="nav.html" data-icon="search">Nav</a></li>
-                                        </ul>
-                        </div> 
-
-
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
--->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
 <!-- ajax -->
  <script>
 
@@ -117,13 +99,6 @@ $(document).ready(function(){
 });
 
 
-//add button functionality
-            $('#slider1_container').hide();
-
-            $('#genreBtn').on('click', function() {
-
-                $('#slider1_container').toggle();
-            })
 
 
 </script>

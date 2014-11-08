@@ -49,7 +49,11 @@
 
             $('#genreBtn').on('click', function() {
 
-                $('#slider1_container').toggle();
+                $('#slider1_container').slideToggle();
+            })
+
+            $('#slider1_container').on('click', 'a', function() {
+                $('#slider1_container').slideToggle();
             })
 
 
