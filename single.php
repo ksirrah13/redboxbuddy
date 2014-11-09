@@ -20,8 +20,7 @@ include('header.php');
 ?>
 
  <!-- movies -->
-    <div>
-        <div>
+    <div class="row">
             <?php
 
             $title = $movie['Products']['Movie']['Title'];
@@ -44,7 +43,7 @@ include('header.php');
                 echo '</div>';
 
             ?>
-        </div>
+
     </div>
  
 
