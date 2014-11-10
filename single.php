@@ -20,27 +20,30 @@ include('header.php');
 ?>
 
  <!-- movies -->
-    <div>
-        <div>
+    <div class="row">
             <?php
 
             $title = $movie['Products']['Movie']['Title'];
             $url = $movie['Products']['Movie']['@websiteUrl'];
             $picture = $movie['Products']['Movie']['BoxArtImages']['atom:link'][1]['@href'];
             $desc = $movie['Products']['Movie']['SynopsisLong'];
+            $format = $movie['Products']['Movie']['@format'];
+
 
             
-                echo '<div class="redbox_movie">';
+                echo '<div class="thumbnail centered col-xs-12 col-md-12">';
 
-                echo '<h2>' . $title . '</h2>';
-                echo '<img src="' . $picture . '" alt="' . title .'" />';
+                echo '<hr>';
+                echo '<img class="img-rounded" src="' . $picture . '" alt="' . title .'" />';
+                echo '<hr>';
+                echo '<h3 class="singleTitle">' . $title . '</h3>';
                 echo '<p>' . $desc . '</p>';
-                echo '<a href="' . $url . '">' . 'View on RedBox' . '</a>';
+                echo '<a class="btn btn-default" href="rbox.php?url=' . $url . '">' . 'Rent on ' . $format . '</a>';
 
                 echo '</div>';
 
             ?>
-        </div>
+
     </div>
  
 

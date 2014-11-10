@@ -17,11 +17,13 @@ $output = curl_exec($ch);
 $movies = json_decode($output, true);
 $timeString = $time == '30' ? 'This Month' : 'This Week';
 
+
 if ($_POST['action'] = 'click') {
     echo '<h2>Top 20 ' . $timeString . '</h2>';
     echo '<ol>';
             foreach($movies['Top20']['Item'] as $movie){
-                echo '<li><a href="'. strtolower($movie['@websiteUrl']) .'">'. $movie['Title'] .'</a></li>';
+            	$id = $movie['@productId'];
+                echo '<li><a href=single.php?id='. $id .'>'. $movie['Title'] .'</a></li>';
 }
         echo '</ol>';
             }
