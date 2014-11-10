@@ -12,7 +12,7 @@
 
 
 
-<span><input type="text" class="form-control" placeholder="Search"></span>
+<span><form action="search.php" method="post"<li><input type="text" class="form-control" name="query" placeholder="Search"></li> </form></span>
 
 <!--  <div class="btn btn-default centered" id="genreBtn">Apply filter by genre</div>
 

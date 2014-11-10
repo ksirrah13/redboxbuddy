@@ -33,7 +33,7 @@ if($_POST['action'] == "click") {
 
             echo '<a href=# data-url=single.php data-id=' . $id . ' >';
 
-	    echo '<div class="col-xs-6 col-md-3 <a href="'. $movie['BoxArtImages']['link'][1]['@href'] .'"><img class="pic" src="'.  $movie['BoxArtImages']['atom:link'][2]['@href'] .'" target="_BLANK" alt="No image found :("></a></div>';
+	    echo '<div class="col-xs-6 col-md-3 <a href="'. $movie['BoxArtImages']['link'][1]['@href'] .'"><img class="pic" src="'.  $movie['BoxArtImages']['atom:link'][2]['@href'] .'" target="_BLANK"></a></div>';
  	       
            echo '</a>';
 
@@ -43,3 +43,4 @@ if($_POST['action'] == "click") {
 
 
 }
+?>

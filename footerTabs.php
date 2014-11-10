@@ -1,8 +1,8 @@
 <div data-role="navbar">
                 <div class="footerfixed">
                                         <ul>
-                                                <li><a href="index.php" data-icon="home">Home</a></li>
-                                                <li><a href="top20tab.php" data-icon="star">Top 20</a></li>
+                                                <li><a href="index.php" data-icon="home" rel="external">Home</a></li>
+                                                <li><a href="top20tab.php" data-icon="star" rel="external">Top 20</a></li>
                                                 
                                         </ul>
                         </div> 
