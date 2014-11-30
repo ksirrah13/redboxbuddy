@@ -1,10 +1,37 @@
-<?php include('header.php')  ?>
+<?php include('header.php'); 
+include('config.php'); 
+
+
+$box = $_GET['box'] == "" ? "all" : $_GET['box'];
+
+if ($box != "all") {
+
+$url = "https://api.redbox.com/v3/stores?apiKey=" . $apikey . "&storeList=" . $box;
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('accept: application/json'));
+$output = curl_exec($ch);
+
+$store = json_decode($output, true);
+
+$address = $store['StoreBulkList']['Store']['Location']['Address'] . ", ";
+$address .= $store['StoreBulkList']['Store']['Location']['City'] . ", ";
+$address .= $store['StoreBulkList']['Store']['Location']['State'];
+
+$address .= "<div class='btn' id='clearLoc' style='color:red'> X</div>";
+}
+
+?>
 
 
 <!-- Persistent variables -->
 <div style="display:none;">
 <span id="category">default</span>
 <span id="genre">all</span>
+<span id="box"><?php echo $box ?></span>
 
 
 </div>
@@ -34,6 +61,8 @@
 
         
     </div> -->
+
+    <p id="boxSearch"></p>
 
     <?php include('slider.php') ?>
 
@@ -70,6 +99,7 @@
 	
 	var $category = $('#category').html();
 	var $genre = $('#genre').html();
+  
 
 	if ($genre != "all") {
 		$('#genreBtn').html("Filtered by: " + $genre);
@@ -81,7 +111,7 @@
        $.ajax({
                                url: $url,
                                type:'post',
-                               data:{'action':'click', 'category': $category, 'genre': $genre},
+                               data:{'action':'click', 'category': $category, 'genre': $genre, 'box': $box},
                                success:function(data,status){
                                                $('.row').html(data);
                              
@@ -93,6 +123,20 @@
                        });
        })
 
+
+  var add = "<?php echo $address ?>";
+
+var $box = $('#box').html();
+  if ($box != "all") {
+    $('#boxSearch').html("Searching box: " + add);
+  } else {
+    $('#boxSearch').html("");
+  }
+
+  $('#clearLoc').click( function() {
+    $('#box').html("all");
+    window.location.replace('index.php');
+  });
 
 $(document).ready(function(){
     $(".ajax.active").trigger('click');
