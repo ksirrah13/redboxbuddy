@@ -1,11 +1,14 @@
 <?php include('header.php')  ?>
 
-<span><form action="locate.php" method="post"<li><input type="text" class="form-control" name="zip" placeholder="Enter Postal Code"></li> </form></span> 
+<input type="text" id="zip" class="form-control" name="zip" placeholder="Enter Postal Code">
+<button id="getLoc" class="btn btn-default centered">Use your current location</button>
 
+ 
 
-	 <div class="locate">
-
-
+<h5>Redbox Locations:</h5>
+<hr>
+<ol>
+  <div class="locateRow">
 
 	</div> <!-- end row -->
 
@@ -14,23 +17,26 @@
 <!-- ajax -->
  <script>
 
-  $('.footerfixed').on('click', 'a' , function() {
-  window.location.replace($(this).attr('href'));
+ $('#getLoc').click(function() {
+  var result, lat, lon;
 
- });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(getPos);
+    } else {
+      result = "none";
+    }
 
-
-
- $('.ajax').click( function() {
- 	var $time = $(this).data("time");
-	var $url = $(this).data("url");
-
-       $.ajax({
-                               url: $url,
+    function getPos(pos) {
+      lat = pos.coords.latitude;
+      lon = pos.coords.longitude;
+      result = lat + "," + lon;
+      $.ajax({
+                               url: 'locate.php',
                                type:'post',
-                               data:{'action':'click', 'time': $time},
+                               data:{'loc': result},
                                success:function(data,status){
-                                               $('.row20').html(data);
+                                               console.log(status);
+                                               $('.locateRow').html(data);
 
                                },
                                error:function(xhr,desc,err){
@@ -38,15 +44,40 @@
                                        console.log("Details: "+desc+"\nError:"+err);
                                }
                        });
-       })
 
-$(document).ready(function(){
-    $(".ajax.active").trigger('click');
-});
 
-</script>
+    }
 
-<script> 
+})
+
+$('#zip').keyup(function(e) {
+  if (e.keyCode == 13) {
+    var zip = $('#zip').val();
+
+      $.ajax({
+                               url: 'locate.php',
+                               type:'post',
+                               data:{'zip': zip},
+                               success:function(data,status){
+                                               console.log(status);
+                                               $('.locateRow').html(data);
+                               },
+                               error:function(xhr,desc,err){
+                                       console.log(xhr);
+                                       console.log("Details: "+desc+"\nError:"+err);
+                               }
+                       });
+
+
+    }
+
+})
+
+  $('.footerfixed').on('click', 'a' , function() {
+  window.location.replace($(this).attr('href'));
+
+ });
+
 
  $('.nav-tabs').on('click', 'li', function() {
         $(this).siblings("li").removeClass("active");

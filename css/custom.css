@@ -80,6 +80,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 
 .row , .row20 {padding-left:25px; padding-bottom: 80px;}
 
+.locateRow {padding-bottom: 80px;}
+
 .titletop {font-size:20px;
 background: #E6E6E6;
 padding-top:5px;
