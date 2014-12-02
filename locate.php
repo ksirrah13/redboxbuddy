@@ -29,9 +29,9 @@ $stores = json_decode($output, true);
 <?php
 foreach($stores['StoreBulkList']['Store'] as $store){
 
-//$id = $store['@StoreId'];
+$id = $store['@storeId'];
 //echo '<p>"'. $store['City'] .'"</p>';
-echo '<div><a><li>';
+echo '<div><a href="index.php?box='. $id .'"><li>';
 echo $store['Location']['Address'] . ", " . $store['Location']['City'] . ", " . $store['Retailer'] . ", " . $store['Channel'];
 echo '</li></a></div>';
 }
