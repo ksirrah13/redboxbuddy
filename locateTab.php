@@ -1,13 +1,9 @@
 <?php include('header.php')  ?>
- 
 
-	<ul class="nav nav-tabs" role="tablist">
-	  <li class="active ajax" data-time="30" data-url="top20.php"><a href="#">This Month</a></li>
-	  <li class="ajax" data-time="7" data-url="top20.php"><a href="#">This Week</a></li>
-	  
-	</ul>
+<span><form action="locate.php" method="post"<li><input type="text" class="form-control" name="zip" placeholder="Enter Postal Code"></li> </form></span> 
 
-	 <div class="row20">
+
+	 <div class="locate">
 
 
 

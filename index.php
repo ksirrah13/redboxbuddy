@@ -53,8 +53,6 @@ $address .= "<div class='btn' id='clearLoc' style='color:red'> X</div>";
             <a class="ajax" href="#" data-url="genre.php" data-genre="Horror">Horror</a>
             <a class="ajax" href="#" data-url="genre.php" data-genre="Drama">Drama</a>
             <a class="ajax" href="#" data-url="genre.php" data-genre="Family">Family</a>
-            <a class="ajax" href="#" data-url="genre.php" data-genre="Romance">Romance</a>
-            <a class="ajax" href="#" data-url="genre.php" data-genre="Kids">Kids</a>
  
     
      

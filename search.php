@@ -8,7 +8,6 @@ $page_size = 20;
 $category = $_POST['category'];
 $page = 1;
 $query = $_POST["query"];
-//$url = "https://api.redbox.com/v3/products?apiKey=" . $apikey . "&q=" . $query;
 $url = "https://api.redbox.com/v3/products?apiKey=". $apikey ."&pageNum=" . $page . "&pageSize=" . $page_size . "&q=" . $query;
 
 
@@ -23,11 +22,13 @@ $products = json_decode($output, true);
 
 ?>
 <div class="searchrow">
+<h4>Search Results:</h4>
+<hr>
 <?php
 foreach($products['Products']['Movie'] as $movie){
 
+$id = $movie['@productId'];
 echo '<div class="col-xs-6 col-md-3 <a href="'. $movie['BoxArtImages']['link'][1]['@href'] .'"><img class="pic" src="'.  $movie['BoxArtImages']['atom:link'][2]['@href'] .'" target="_BLANK"></a></div>';
-
 
                }
 

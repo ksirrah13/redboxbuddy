@@ -3,6 +3,8 @@
                                         <ul>
                                                 <li><a href="index.php" data-icon="home" rel="external">Home</a></li>
                                                 <li><a href="top20tab.php" data-icon="star" rel="external">Top 20</a></li>
+                                                <li><a href="locateTab.php" data-icon="search" rel="external">Locate</a></li>
+						
                                                 
                                         </ul>
                         </div> 

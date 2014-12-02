@@ -79,8 +79,8 @@
             <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Horror">Horror</a></div>
             <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Drama">Drama</a></div>
             <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Family">Family</a></div>
+            <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Suspense">Suspense</a></div>
             <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Romance">Romance</a></div>
-            <div class="slider"><a class="ajax" href="#" data-url="genre.php" data-genre="Kids">Kids</a></div>
 
        
           
