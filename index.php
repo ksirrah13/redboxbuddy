@@ -126,7 +126,7 @@ $address .= "<div class='btn' id='clearLoc' style='color:red'> X</div>";
 
 var $box = $('#box').html();
   if ($box != "all") {
-    $('#boxSearch').html("Searching box: " + add);
+    $('#boxSearch').html("Currently in box: " + add);
   } else {
     $('#boxSearch').html("");
   }
